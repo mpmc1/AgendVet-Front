@@ -7,3 +7,7 @@ export class BookingModel {
     consultationReason!: string
     
 }
+
+export class EndpointBookingResponse {
+    data!: BookingModel[]
+}
