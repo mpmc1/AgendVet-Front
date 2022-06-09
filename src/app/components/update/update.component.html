@@ -15,7 +15,7 @@
         <mat-label>Veterinario</mat-label>
         <mat-select>
           <mat-option *ngFor="let item of veterinarios; let index = index" [value]="index">
-            {{item.person.name}}
+            {{item.name}}
           </mat-option>
         </mat-select>
       </mat-form-field>
@@ -41,7 +41,7 @@
         <mat-label>Veterinario</mat-label>
         <mat-select>
           <mat-option *ngFor="let item of veterinarios; let index = index" [value]="index">
-            {{item.person.name}}
+            {{item.name}}
           </mat-option>
         </mat-select>
       </mat-form-field>

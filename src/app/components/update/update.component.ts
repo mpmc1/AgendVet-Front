@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { VeterinaryModel } from 'src/app/models/veterinary.model';
+import { EndpointVeterinryResponse, VeterinaryModel } from 'src/app/models/veterinary.model';
 import { VeterinaryService } from 'src/app/services/veterinary.service';
 
 @Component({
@@ -15,7 +15,7 @@ export class UpdateComponent implements OnInit {
 
   ngOnInit(): void {
     this.vetService.getVeterinary().subscribe(response =>{
-      this.veterinarios = response;
+      this.veterinarios = response.data;
     },error =>{
       console.error(error);
     });

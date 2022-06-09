@@ -15,7 +15,7 @@ export class CancelComponent implements OnInit {
 
   ngOnInit(): void {
     this.vetService.getVeterinary().subscribe(response =>{
-      this.veterinarios = response;
+      this.veterinarios = response.data;
     },error =>{
       console.error(error);
     });
