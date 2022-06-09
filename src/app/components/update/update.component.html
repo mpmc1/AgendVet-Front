@@ -1,0 +1,74 @@
+<h1 class="title">Editar cita</h1>
+<div class="container">
+  <mat-card style="margin-top: 10px; width: 90%">
+    <div fxLayout="column" fxLayoutAlign="space-evenly center">
+        <h2>Información de la cita</h2>
+        <mat-form-field class="input" appearance="standard">
+            <mat-label>Nombre dueño</mat-label>
+            <input matInput type="text" />
+          </mat-form-field>
+      <mat-form-field class="input" appearance="standard">
+        <mat-label>Numero de documento</mat-label>
+        <input matInput type="text" />
+      </mat-form-field>
+      <mat-form-field class="input" appearance="standard">
+        <mat-label>Veterinario</mat-label>
+        <mat-select>
+          <mat-option *ngFor="let item of veterinarios; let index = index" [value]="index">
+            {{item.person.name}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field class="input" appearance="standard">
+        <mat-label>Fecha</mat-label>
+        <input matInput [matDatepicker]="datepicker" />
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle
+          matSuffix
+          [for]="datepicker"
+        ></mat-datepicker-toggle>
+        <mat-datepicker #datepicker>
+          <mat-datepicker-actions>
+            <button mat-button matDatepickerCancel>Cancelar</button>
+            <button mat-raised-button color="primary" matDatepickerApply>
+              Aceptar
+            </button>
+          </mat-datepicker-actions>
+        </mat-datepicker>
+      </mat-form-field>
+      <h2 style="margin-top: 20px;">Ingrese los campos que desea cambiar</h2>
+      <mat-form-field class="input" appearance="standard">
+        <mat-label>Veterinario</mat-label>
+        <mat-select>
+          <mat-option *ngFor="let item of veterinarios; let index = index" [value]="index">
+            {{item.person.name}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field class="input" appearance="standard">
+        <mat-label>Fecha</mat-label>
+        <input matInput [matDatepicker]="datepicker1" />
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle
+          matSuffix
+          [for]="datepicker1"
+        ></mat-datepicker-toggle>
+        <mat-datepicker #datepicker1>
+          <mat-datepicker-actions>
+            <button mat-button matDatepickerCancel>Cancelar</button>
+            <button mat-raised-button color="primary" matDatepickerApply>
+              Aceptar
+            </button>
+          </mat-datepicker-actions>
+        </mat-datepicker>
+      </mat-form-field>
+      <mat-form-field class="input" appearance="standard">
+        <mat-label>Hora</mat-label>
+        <input matInput type="time" />
+      </mat-form-field>
+      <div style="margin-top:30px;" fxLayout="column" fxLayoutAlign="center center">
+        <button mat-raised-button color="primary">Cancelar cita</button>
+      </div>
+    </div>
+  </mat-card>
+</div>

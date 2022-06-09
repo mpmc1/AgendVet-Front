@@ -1,0 +1,54 @@
+<div class="card-container">
+    <mat-card class="card-container">
+        <div fxFlex="100" fxLayout="column" fxLayoutAlign="center center">
+            <div fxFlex="100" fxLayout="column" fxLayoutAlign="center center">
+                <mat-card-title-group>
+                    <div fxLayout="row wrap" fxLayoutAlign="center center">
+                        <mat-card-title class="card-container-title" style="width: 100%;">BIENVENIDO A AGENDVET</mat-card-title>
+                        <div fxLayout="row wrap" fxLayoutAlign="center center" >
+                            <mat-form-field class="input" appearance="standard">
+                                <mat-label>Numero de documento</mat-label>
+                                <input matInput type="text" />
+                              </mat-form-field>
+            
+                              <mat-form-field class="input" appearance="standard">
+                                <mat-label>Fecha</mat-label>
+                                <input matInput [matDatepicker]="datepicker" />
+                                <mat-hint>MM/DD/YYYY</mat-hint>
+                                <mat-datepicker-toggle
+                                  matSuffix
+                                  [for]="datepicker"
+                                ></mat-datepicker-toggle>
+                                <mat-datepicker #datepicker>
+                                  <mat-datepicker-actions>
+                                    <button mat-button matDatepickerCancel>Cancelar</button>
+                                    <button mat-raised-button color="primary" matDatepickerApply>
+                                      Aceptar
+                                    </button>
+                                  </mat-datepicker-actions>
+                                </mat-datepicker>
+                              </mat-form-field>
+                              <mat-form-field class="input" appearance="standard">
+                                <mat-label>Hora</mat-label>
+                                <input matInput type="time" />
+                              </mat-form-field>
+                        </div>
+                    </div>
+                </mat-card-title-group>
+                <br><br>
+                <mat-card-content>
+                    <button mat-raised-button color="primary" (click)="findCitas()">Consultar Cita</button>
+                </mat-card-content>
+            </div>
+            <div *ngIf="showingCitas" fxLayout="row wrap" fxLayoutAlign="center center">
+                <mat-card *ngFor="let item of citas" class="card-citas">
+                    <p><strong>Nombre:</strong> {{item.name}}</p>
+                    <p><strong>Fecha:</strong> {{item.date}}</p>
+                    <p><strong>Hora:</strong> {{item.hour}}</p>
+                </mat-card>
+            </div>
+        </div>
+    </mat-card>
+</div>
+
+ 
