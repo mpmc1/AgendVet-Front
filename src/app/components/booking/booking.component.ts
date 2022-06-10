@@ -10,6 +10,16 @@ import { VeterinaryService } from 'src/app/services/veterinary.service';
 export class BookingComponent implements OnInit {
 
   veterinarios: VeterinaryModel[]=[];
+  ownerName: string = "";
+  idNumber: string = "";
+  petName: string = "";
+  petSpecie: string = "";
+  symptoms: string = "";
+  date: string = "";
+  veterinary: string = "";
+  hour: string = "";
+
+
 
   constructor(private vetService:VeterinaryService) { }
 
@@ -20,5 +30,13 @@ export class BookingComponent implements OnInit {
       console.error(error);
     });
   }
+
+  createBooking(){
+
+    
+
+  }
+
+
 
 }

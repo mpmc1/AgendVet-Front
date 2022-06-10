@@ -15,6 +15,7 @@ export class UpdateComponent implements OnInit {
 
   ngOnInit(): void {
     this.vetService.getVeterinary().subscribe(response =>{
+      console.log(response);
       this.veterinarios = response.data;
     },error =>{
       console.error(error);
