@@ -6,6 +6,7 @@ export class VeterinaryModel {
     lastname!: string
     idNumber!: string
     idType!: IdTypeModel
+    phone! : string
     
 }
 

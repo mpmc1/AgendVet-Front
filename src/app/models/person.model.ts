@@ -1,5 +1,6 @@
 export class PersonModel {
     name!: string
     lastname?: string
-    identification?: number
+    identification?: string
+    phone? : string
 }
